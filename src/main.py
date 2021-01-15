@@ -1,8 +1,25 @@
-import requests
+import json
+import pandas as pd
 
-api_key = "89236ab4-678f-4320-965a-efed356a900a"
+with open('input.json') as f:
+  data = json.load(f)
 
-url = 'https://api2.r6stats.com/public-api/stats/Kuri_NEON/pc/generics'
-headers = "Authorization: Bearer " + api_key
-jsonData = requests.get(url, headers=headers).json()
-print(jsonData)
+# print(data)
+# print(json.dumps(data, indent = 4, sort_keys=False))
+
+# print(data['operators'][1])
+
+# print(len(data['operators']))
+
+column_names = ["name", "ctu", "role","kills","deaths","kd","wins","losses","wl","headshots","dbnos","melee_kills","experience","playtime"]
+
+df = pd.DataFrame(columns = column_names)
+
+for i in data['operators']:
+    i.pop('abilities', None)
+    i.pop('badge_image', None)
+    df = df.append(i,ignore_index=True)
+
+print(df)
+
+        
