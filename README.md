@@ -1,2 +1,4 @@
-# r6analysisproject
-Personal project using the R6 Stat API to develop predictive learning on player patterns over time
+# Rainbow Six Siege Stat Analysis/ Prediction Project
+As a avid Rainbow Six Siege player, the game is almost a part of who am I. But also a programmer, I want analyze my patterns and how I'm improving over time. So utilizing the R6 Stat API, I seek to provide statstics on the any player and provide a deep insight into how that player functions and how they player on a normal basis. This can hopefully be expanded into other places such as figuring out team dynamics and chemistry to see how a ranked match will play out, or figuring out which friends you want to play with for the day. 
+
+This project is a fan-made project and is not affiliated with Ubisoft. Any image or use of any product such as but not restricted to Tom Clancy’s, Rainbow Six, The Soldier Icon, Ubisoft and the Ubisoft logo are trademarks of Ubisoft Entertainment.
