@@ -14,7 +14,7 @@ def sum_headshots(df):
     return df['headshots'].sum()
 
 def headshots_per_eng(df):
-    engagaments = (sum_kills(df) + sum_deaths(df)) * 0.97
+    engagaments = (sum_kills(df) + sum_deaths(df)) * 0.95 # 5% is taken off here for non engagements deaths (Suicides, traps, etc)
     headshots = sum_headshots(df)
     return headshots / engagaments
 
