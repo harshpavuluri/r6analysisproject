@@ -21,13 +21,16 @@ def main():
       i.pop('badge_image', None)
       df = df.append(i,ignore_index=True)
 
+  return df
 
 
-  attacker_df = df[df['role'] == "Attacker"]
-  defender_df = df[df['role'] == "Defender"]
 
-  print(attacker_df)
-  print(defender_df)
-  pass
+  pass 
 
-main()
+all_ops_df = main()
+
+attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
+defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
+
+# print(attacker_df)
+# print(defender_df)
