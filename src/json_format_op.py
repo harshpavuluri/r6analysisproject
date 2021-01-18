@@ -2,7 +2,7 @@ import json
 import pandas as pd
 
 def main():
-  with open('input.json') as f:
+  with open('ops_peng.json') as f:
     data = json.load(f)
 
   # print(data)
