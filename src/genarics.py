@@ -18,7 +18,14 @@ def headshots_per_eng(df):
     headshots = sum_headshots(df)
     return headshots / engagaments
 
+def wins_per_eng(df):
+    engagaments = (sum_kills(df) + sum_deaths(df)) * 0.95 # 5% is taken off here for non engagements deaths (Suicides, traps, etc)
+    kills_trim = sum_kills(df) * 0.95 # Error like last variable
+    return kills_trim / engagaments
+
+
 def runner(generaic_ops_df):
     print("Headshots per Engagment: " + str(headshots_per_eng(generaic_ops_df)))
+    print("Wins per Engagment: " + str(wins_per_eng(generaic_ops_df)))
 
     pass
