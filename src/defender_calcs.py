@@ -1,3 +1,3 @@
 from json_format_op import defender_df
+from genarics import *
 
-print(defender_df)

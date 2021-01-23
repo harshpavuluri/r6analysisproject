@@ -23,7 +23,6 @@ def wins_per_eng(df):
     kills_trim = sum_kills(df) * 0.95 # Error like last variable
     return kills_trim / engagaments
 
-
 def runner(generaic_ops_df):
     print("Headshots per Engagment: " + str(headshots_per_eng(generaic_ops_df)))
     print("Wins per Engagment: " + str(wins_per_eng(generaic_ops_df)))
