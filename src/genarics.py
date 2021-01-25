@@ -25,7 +25,8 @@ def sum_wins(df):
 def sum_losses(df):
     return df['losses'].sum()
 
-
+def kd(df):
+    return sum_kills(df) / sum_deaths(df)
 
 def headshots_per_eng(df):
     engagaments = (sum_kills(df) + sum_deaths(df)) * 0.95 # 5% is taken off here for non engagements deaths (Suicides, traps, etc)

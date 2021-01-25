@@ -2,7 +2,7 @@ import json
 import pandas as pd
 
 def main():
-  with open('stat_files/ops_avo.json') as f:
+  with open('stat_files/ops_kuri.json') as f:
     data = json.load(f)
 
   # print(data)
