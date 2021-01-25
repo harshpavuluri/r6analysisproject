@@ -28,6 +28,7 @@ def role_stat(df_role, op_list, name_op):
 
 def attacker_stats(df):
     role_list = ["Hard Breach", "Vertical Operators", "True Fraggers", "Anti-Roamers", "Support Operators"]
+    
     hard_breach = ["Thermite" , "Hibana", "Maverick", "Ace"]
     vert_ops = ["Buck" , "Sledge", "Glaz", "Fuze", "Blackbeard"]
     true_frags = ["Ash", "Zofia", "Amaru", "Nøkk", "Iana"]
@@ -50,6 +51,7 @@ def attacker_stats(df):
 
 def defender_stats(df):
     role_list = ["Roamers", "Anchors", "Lurkers", "Wall Denial"]
+    
     roam = ["Jager" , "Caviera" , "Alibi", "Ela", "Vigil", "Melusi", "Oryx"]
     anchor = ["Maestro", "Rook" , "Doc", "Echo", "Mira", "Castle", "Smoke", "Tachanka", "Clash"]
     lurkers = ["Lesion" , "Valkyrie", "Mozzie", "Wamai", "Pulse", "Frost", "Goyo"]
