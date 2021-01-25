@@ -13,6 +13,20 @@ def sum_kills(df):
 def sum_headshots(df):
     return df['headshots'].sum()
 
+def sum_playtime(df):
+    return df['playtime'].sum()
+
+def sum_experience(df):
+    return df['experience'].sum()
+
+def sum_wins(df):
+    return df['wins'].sum()
+
+def sum_losses(df):
+    return df['losses'].sum()
+
+
+
 def headshots_per_eng(df):
     engagaments = (sum_kills(df) + sum_deaths(df)) * 0.95 # 5% is taken off here for non engagements deaths (Suicides, traps, etc)
     headshots = sum_headshots(df)
