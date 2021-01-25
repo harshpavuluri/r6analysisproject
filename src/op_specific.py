@@ -17,7 +17,7 @@ def attacker_stats(df):
 def defender_stats(df):
     roam = ["Jager" , "Caviera" , "Alibi", "Ela", "Vigil", "Melusi", "Oryx"]
     anchor = ["Maestro", "Rook" , "Doc", "Echo", "Mira", "Castle", "Smoke", "Tachanka", "Clash"]
-    lurkers = ["Lesion" , "Valkyrie", "Mozzie", "Wamai", "Pulse", "Frost", "Goyo", ""]
+    lurkers = ["Lesion" , "Valkyrie", "Mozzie", "Wamai", "Pulse", "Frost", "Goyo"]
     wall_den = ["Mute", "Bandit" , "Kaid", "Aruni", "Kapkan"]
 
     pass

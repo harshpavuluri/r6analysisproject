@@ -1,9 +1,12 @@
-from json_format_op import defender_df
-from json_format_op import attacker_df
 from json_format_op import all_ops_df
+from op_specific import attacker_stats
+from op_specific import defender_stats
 
 def main():
-    runner()
+    attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
+    defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
+
+    attack = attacker_stats(attacker_df)
 
 
 main()

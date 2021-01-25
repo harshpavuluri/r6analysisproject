@@ -29,8 +29,5 @@ def main():
 
 all_ops_df = main()
 
-attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
-defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
-
 # print(attacker_df)
 # print(defender_df)
