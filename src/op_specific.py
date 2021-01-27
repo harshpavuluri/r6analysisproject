@@ -1,6 +1,6 @@
 from genarics import *
 import pandas as pd
-pd.set_option("display.max_columns", None)
+pd.set_option("display.max_rows", None)
 def role_stat(df_role, op_list, name_op):
 
     column_names = ["name", "ctu", "role","kills","deaths","kd","wins","losses","wl","headshots","dbnos","melee_kills","experience","playtime"]
@@ -28,20 +28,24 @@ def role_stat(df_role, op_list, name_op):
     return final_df
 
 def attacker_stats(df):
-    role_list = ["Hard Breach", "Vertical Operators", "True Fraggers", "Anti-Roamers", "Support Operators"]
+    role_list = ["Hard Breacher","Hard Breach Support","Soft Breachers","Entry Fraggers","Disrupters","Angle Watchers","Area Denial","Intel Gatherers"]
     
     hard_breach = ["Thermite" , "Hibana", "Maverick", "Ace"]
-    vert_ops = ["Buck" , "Sledge", "Glaz", "Fuze", "Blackbeard"]
-    true_frags = ["Ash", "Zofia", "Amaru", "Nøkk", "Iana"]
-    anti_roam = ["Jackal" , "Lion", "Dokkaebi", "Nomad", "Gridlock", "Zero"]
-    supp_ops = ["Capitao" , "Ying", "Gridlock", "Blitz", "Montagne", "Kali", "Thatcher", "Twitch", "IQ", "Finka", "Ying"]
-    
-    op_list =  [hard_breach, vert_ops, true_frags,anti_roam,supp_ops]
+    hard_breach_supp = ["Thathcer", "Kali", "Twitch", "Maverick", "IQ"]
+    soft_breach = ["Buck", "Sledge", "Zofia", "Ash", "Jackal", "Amaru"]
+    entry_frag = ["Ash", "Zofia", "Jackal", "Buck", "Sledge", "IQ", "Twitch", "Blitz", "Maverick", "Nomad", "Ying", "Nøkk", "Finka"] 
+    disrupt = ["Lion", "Dokkaebi", "Montagne", "Nomad", "Capitao", "Fuze", "Jackal"]
+    angle_watch = ["Blackbeard", "Glaz", "Kali"]
+    area_den = ["Gridlock", "Nomad", "Capitao"]
+    intel_gath = ["Jackal", "Dokkaebi", "Lion", "Montagne", "IQ", "Iana"] 
+
+    op_list =  [hard_breach, hard_breach_supp, soft_breach,entry_frag,disrupt, angle_watch, area_den, intel_gath]
 
     col_names = ["name", "kills","deaths","K/D", "wins","losses", "headshots","head_per_eng","wins_per_eng","experience","playtime"]
     final_df = pd.DataFrame(columns = col_names)
 
     for i in range(len(role_list)):
+        print(role_list[i])
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
     
