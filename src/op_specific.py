@@ -2,7 +2,6 @@ from genarics import *
 import pandas as pd
 pd.set_option("display.max_rows", None)
 def role_stat(df_role, op_list, name_op):
-
     column_names = ["name", "ctu", "role","kills","deaths","kd","wins","losses","wl","headshots","dbnos","melee_kills","experience","playtime"]
     df = pd.DataFrame(columns = column_names)
     for i in op_list:
@@ -45,24 +44,28 @@ def attacker_stats(df):
     final_df = pd.DataFrame(columns = col_names)
 
     for i in range(len(role_list)):
-        print(role_list[i])
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
     
-    print(final_df.head())
+    print(final_df)
 
     pass
 
 
 def defender_stats(df):
-    role_list = ["Roamers", "Anchors", "Lurkers", "Wall Denial"]
+    role_list = ["Breach Denial", "Anti-Intel", "Area Denial", "Intel Gathering", "Trappers", "Dedicated Roamers", "Support"]
     
-    roam = ["Jager" , "Caviera" , "Alibi", "Ela", "Vigil", "Melusi", "Oryx"]
-    anchor = ["Maestro", "Rook" , "Doc", "Echo", "Mira", "Castle", "Smoke", "Tachanka", "Clash"]
-    lurkers = ["Lesion" , "Valkyrie", "Mozzie", "Wamai", "Pulse", "Frost", "Goyo"]
-    wall_den = ["Mute", "Bandit" , "Kaid", "Aruni", "Kapkan"]
+    breah_den = ["Bandit", "Mute", "Kaid"]
+    anti_int = ["Bandit", "Mute", "Kaid", "Mozzie"]
+    area_den = ["Mira", "Smoke", "Goyo", "Melusi", "Castle", "Tachanka"]
+    intel_gath = ["Valkyrie", "Echo", "Maestro", "Pulse", "Alibi", "Melusi", "Clash", "Mozzie", "Warden", "Caveira"]
+    trap = ["Lesion", "Frost", "Kapkan", "Ela"]
+    ded_roam = ["Caveira", "Vigil", "Oryx"]
+    support = ["Jäger", "Wamai", "Rook", "Doc"]
 
-    op_list = [roam, anchor, lurkers, wall_den]
+
+
+    op_list = [breah_den, anti_int, area_den, intel_gath, trap, ded_roam, support]
 
     col_names = ["name", "kills","deaths","K/D", "wins","losses", "headshots","head_per_eng","wins_per_eng","experience","playtime"]
     final_df = pd.DataFrame(columns = col_names)
@@ -71,6 +74,6 @@ def defender_stats(df):
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
 
-    print(final_df.head())
+    print(final_df)
 
     pass
