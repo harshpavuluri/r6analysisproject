@@ -74,6 +74,6 @@ def defender_stats(df):
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
 
-    print(final_df)
+    print(final_dfw)
 
     pass
