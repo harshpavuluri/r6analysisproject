@@ -64,7 +64,7 @@ def attacker_stats(df):
 
 
 def defender_stats(df):
-    
+    print("On defense:")
     role_list = ["Breach Denial", "Anti-Intel", "Area Denial", "Intel Gathering", "Trappers", "Dedicated Roamers", "Support"]
     
     breah_den = ["Bandit", "Mute", "Kaid"]
@@ -83,7 +83,7 @@ def defender_stats(df):
     for i in range(len(role_list)):
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
-
-    print(final_df)
+    find_player_role(final_df)
+    # print(final_df)
 
     pass

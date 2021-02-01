@@ -7,7 +7,9 @@ def main():
     defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
 
     attack = attacker_stats(attacker_df)
-    # defend = defender_stats(defender_df)
+    print()
+    defend = defender_stats(defender_df)
+
 
 
 main()
