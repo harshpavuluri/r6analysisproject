@@ -57,13 +57,11 @@ def defender_stats(df):
     
     breah_den = ["Bandit", "Mute", "Kaid"]
     anti_int = ["Bandit", "Mute", "Kaid", "Mozzie"]
-    area_den = ["Mira", "Smoke", "Goyo", "Melusi", "Castle", "Tachanka"]
+    area_den = ["Mira", "Smoke", "Goyo", "Melusi", "Castle", "Tachanka", "Aruni"]
     intel_gath = ["Valkyrie", "Echo", "Maestro", "Pulse", "Alibi", "Melusi", "Clash", "Mozzie", "Warden", "Caveira"]
     trap = ["Lesion", "Frost", "Kapkan", "Ela"]
     ded_roam = ["Caveira", "Vigil", "Oryx"]
     support = ["Jäger", "Wamai", "Rook", "Doc"]
-
-
 
     op_list = [breah_den, anti_int, area_den, intel_gath, trap, ded_roam, support]
 
@@ -74,6 +72,6 @@ def defender_stats(df):
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
 
-    print(final_dfw)
+    print(final_df)
 
     pass
