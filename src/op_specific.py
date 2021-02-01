@@ -1,6 +1,7 @@
 from genarics import *
 import pandas as pd
 pd.set_option("display.max_rows", None)
+
 def role_stat(df_role, op_list, name_op):
     column_names = ["name", "ctu", "role","kills","deaths","kd","wins","losses","wl","headshots","dbnos","melee_kills","experience","playtime"]
     df = pd.DataFrame(columns = column_names)
@@ -26,7 +27,17 @@ def role_stat(df_role, op_list, name_op):
     final_df = final_df.append(temp_dict, ignore_index=True)
     return final_df
 
+def find_player_role(df):
+    role_wins = comp_wins_per_eng(df)
+    role_heads = comp_head_per_eng(df)
+    # print(role_wins)
+    name_wins = role_wins["name"]
+    val_wins = role_wins["wins_per_eng"]
+    print("Wins most engagments with "+ name_wins + " operators at a " + str(round(val_wins,2)) + " rate" )
+    pass
+
 def attacker_stats(df):
+    print("On attack:")
     role_list = ["Hard Breacher","Hard Breach Support","Soft Breachers","Entry Fraggers","Disrupters","Angle Watchers","Area Denial","Intel Gatherers"]
     
     hard_breach = ["Thermite" , "Hibana", "Maverick", "Ace"]
@@ -46,13 +57,14 @@ def attacker_stats(df):
     for i in range(len(role_list)):
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
-    
-    print(final_df)
+    find_player_role(final_df)
+    # print(final_df)
 
     pass
 
 
 def defender_stats(df):
+    
     role_list = ["Breach Denial", "Anti-Intel", "Area Denial", "Intel Gathering", "Trappers", "Dedicated Roamers", "Support"]
     
     breah_den = ["Bandit", "Mute", "Kaid"]
