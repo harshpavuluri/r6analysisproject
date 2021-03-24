@@ -19,6 +19,7 @@ def role_stat(df_role, op_list, name_op):
         "headshots": sum_headshots(df),
         "head_per_eng": headshots_per_eng(df),
         "wins_per_eng": wins_per_eng(df),
+        "kills_per_min": kills_per_min(df),
         "experience": sum_experience(df),
         "playtime": sum_playtime(df)
     }
@@ -58,7 +59,7 @@ def attacker_stats(df):
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
     find_player_role(final_df)
-    # print(final_df)
+    print(final_df)
 
     pass
 
@@ -84,6 +85,6 @@ def defender_stats(df):
         final_df = final_df.append(role_stat(df,op_list[i],role_list[i]),ignore_index=True)
     
     find_player_role(final_df)
-    # print(final_df)
+    print(final_df)
 
     pass

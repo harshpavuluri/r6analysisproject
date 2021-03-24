@@ -20,6 +20,8 @@ def main():
       i.pop('abilities', None)
       i.pop('badge_image', None)
       df = df.append(i,ignore_index=True)
+  
+  df.to_csv('data.csv')
 
   return df
 

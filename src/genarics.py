@@ -48,6 +48,12 @@ def comp_wins_per_eng(df):
     # print(max_ind)
     # print(df.loc[max_ind])
     return df.loc[max_ind]
+
+def kills_per_min(df):
+    kills = sum_kills(df) 
+    minu = sum_playtime(df) / 60
+    return kills/minu
+
 def comp_head_per_eng(df):
     pass
 
