@@ -91,8 +91,6 @@ six==1.16.0
 sklearn==0.0
 smmap==4.0.0
 soupsieve==2.2.1
-thonny==3.3.14
-thonnyapp==0.9.1
 threadpoolctl==2.1.0
 toml==0.10.2
 tornado==6.1
