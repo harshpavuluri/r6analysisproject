@@ -4,20 +4,22 @@ pd.set_option("display.max_rows", None)
 class Account:
     '''
     Class variables:
+    self.account_name: string
     defender_roles: dataframe
     attacker_roles: dataframe
 
-    Functions:
+    Accessible Functions:
     __init__: Initiate Class
     role_stat: Takes a dataframe and a list of operators and returns a dataframe with the stats of the operators in the list
     find_player_role: Takes a dataframe and the most successful role a account plays
     attacker_stats: Takes a dataframe and returns a dataframe of attacker roles
     defender_stats: Takes a dataframe and returns a dataframe of defender roles
     '''
-    def __init__(self):
-
+    def __init__(self, account_name):
+        self.account_name = account_name
         pass
 
+    #Private Functions
     def __sum_deaths(self,df):
         return df['deaths'].sum()
 
@@ -75,7 +77,7 @@ class Account:
     #     print("Wins per Engagment: " + str(self.wins_per_eng(generaic_ops_df)))
 
     #     pass
-
+    # Public Functions
     def role_stat(self,df_role, op_list, name_op):
         '''
         This function takes a dataframe and a list of operators and returns a dataframe with the stats of the operators in the list
