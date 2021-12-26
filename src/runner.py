@@ -1,5 +1,4 @@
-from op_specific import attacker_stats
-from op_specific import defender_stats
+from account_stat import Account
 
 import json
 import pandas as pd
@@ -23,9 +22,9 @@ def main():
     all_ops_df = get_data('ops_kuri.json')
     attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
     defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
-
-    attack = attacker_stats(attacker_df)
+    kuri_obj = Account()
+    attack = kuri_obj.attacker_stats(attacker_df)
     print() 
-    defend = defender_stats(defender_df)
+    defend = kuri_obj.defender_stats(defender_df)
 
 main()
