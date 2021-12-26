@@ -105,6 +105,7 @@ class Account:
             "playtime": self.__sum_playtime(df)
         }
         col_names = ["name", "kills","deaths", "K/D" ,"wins","losses", "headshots","head_per_eng","wins_per_eng","experience","playtime"]
+    
         final_df = pd.DataFrame(columns = col_names)
         final_df = final_df.append(temp_dict, ignore_index=True)
         return final_df
@@ -152,6 +153,9 @@ class Account:
         
         self.find_player_role(final_df)
         print(final_df)
+        final_df[["kills","deaths","K/D", "wins","losses", "headshots",
+        "head_per_eng","wins_per_eng","experience","playtime"]] = final_df[["kills","deaths","K/D", "wins","losses", "headshots",
+                                                                    "head_per_eng","wins_per_eng","experience","playtime"]].apply(pd.to_numeric)
         self.attacker_roles = final_df
         pass
 
@@ -183,5 +187,8 @@ class Account:
         
         self.find_player_role(final_df)
         print(final_df)
+        final_df[["kills","deaths","K/D", "wins","losses", "headshots",
+        "head_per_eng","wins_per_eng","experience","playtime"]] = final_df[["kills","deaths","K/D", "wins","losses", "headshots",
+                                                                    "head_per_eng","wins_per_eng","experience","playtime"]].apply(pd.to_numeric)
         self.defender_roles = final_df
         pass
