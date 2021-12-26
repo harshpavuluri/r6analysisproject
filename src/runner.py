@@ -22,7 +22,8 @@ def main():
     all_ops_df = get_data('ops_kuri.json')
     attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
     defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
-    kuri_obj = Account()
+    kuri_obj = Account("Kuri_NEON")
+    print("Stats for " + kuri_obj.account_name)
     attack = kuri_obj.attacker_stats(attacker_df)
     print() 
     defend = kuri_obj.defender_stats(defender_df)

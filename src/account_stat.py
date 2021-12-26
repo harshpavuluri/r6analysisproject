@@ -135,11 +135,11 @@ class Account:
         role_list = ["Hard Breacher","Hard Breach Support","Soft Breachers","Entry Fraggers","Disrupters","Angle Watchers","Area Denial","Intel Gatherers"]
         
         hard_breach = ["Thermite" , "Hibana", "Maverick", "Ace"]
-        hard_breach_supp = ["Thathcer", "Kali", "Twitch", "Maverick", "IQ"]
-        soft_breach = ["Buck", "Sledge", "Zofia", "Ash", "Jackal", "Amaru"]
-        entry_frag = ["Ash", "Zofia", "Jackal", "Buck", "Sledge", "IQ", "Twitch", "Blitz", "Maverick", "Nomad", "Ying", "Nøkk", "Finka"] 
-        disrupt = ["Lion", "Dokkaebi", "Montagne", "Nomad", "Capitao", "Fuze", "Jackal"]
-        angle_watch = ["Blackbeard", "Glaz", "Kali"]
+        hard_breach_supp = ["Thathcer", "Kali", "Twitch", "Maverick", "IQ", "Flores", "Osa"]
+        soft_breach = ["Buck", "Sledge", "Zofia", "Ash", "Jackal", "Amaru", "Flores"]
+        entry_frag = ["Ash", "Zofia", "Jackal", "Buck", "Sledge", "IQ", "Twitch", "Blitz", "Maverick", "Nomad", "Ying", "Nøkk", "Finka", "Flores"] 
+        disrupt = ["Lion", "Dokkaebi", "Montagne", "Nomad", "Capitao", "Fuze", "Jackal", "Flores", "Osa"]
+        angle_watch = ["Blackbeard", "Glaz", "Kali", "Osa"]
         area_den = ["Gridlock", "Nomad", "Capitao"]
         intel_gath = ["Jackal", "Dokkaebi", "Lion", "Montagne", "IQ", "Iana"] 
 
@@ -169,15 +169,15 @@ class Account:
         print("On defense:")
         role_list = ["Breach Denial", "Anti-Intel", "Area Denial", "Intel Gathering", "Trappers", "Dedicated Roamers", "Support"]
         
-        breah_den = ["Bandit", "Mute", "Kaid"]
+        breach_den = ["Bandit", "Mute", "Kaid"]
         anti_int = ["Bandit", "Mute", "Kaid", "Mozzie"]
         area_den = ["Mira", "Smoke", "Goyo", "Melusi", "Castle", "Tachanka", "Aruni"]
         intel_gath = ["Valkyrie", "Echo", "Maestro", "Pulse", "Alibi", "Melusi", "Clash", "Mozzie", "Warden", "Caveira"]
-        trap = ["Lesion", "Frost", "Kapkan", "Ela"]
-        ded_roam = ["Caveira", "Vigil", "Oryx"]
-        support = ["Jäger", "Wamai", "Rook", "Doc"]
+        trap = ["Lesion", "Frost", "Kapkan", "Ela", "Thorn"]
+        ded_roam = ["Caveira", "Vigil", "Oryx", "Thorn"]
+        support = ["Jäger", "Wamai", "Rook", "Doc", "Thunderbird"]
 
-        op_list = [breah_den, anti_int, area_den, intel_gath, trap, ded_roam, support]
+        op_list = [breach_den, anti_int, area_den, intel_gath, trap, ded_roam, support]
 
         col_names = ["name", "kills","deaths","K/D", "wins","losses", "headshots","head_per_eng","wins_per_eng","experience","playtime"]
         final_df = pd.DataFrame(columns = col_names)
