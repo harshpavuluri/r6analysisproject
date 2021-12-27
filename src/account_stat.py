@@ -7,6 +7,8 @@ class Account:
     self.account_name: string
     defender_roles: dataframe
     attacker_roles: dataframe
+    attack_ops: dataframe
+    defend_ops: dataframe
 
     Accessible Functions:
     __init__: Initiate Class
@@ -47,13 +49,16 @@ class Account:
         return self.__sum_kills(df) / self.__sum_deaths(df)
 
     def __headshots_per_eng(self,df):
-        engagaments = (self.__sum_kills(df) + self.__sum_deaths(df)) * 0.95 # 5% is taken off here for non engagements deaths (Suicides, traps, etc)
+        engagaments = (self.__sum_kills(df) + self.__sum_deaths(df)) * 0.95 
+        # 5% is taken off here for non engagements deaths (Suicides, traps, etc)
         headshots = self.__sum_headshots(df)
         return headshots / engagaments
 
     def __wins_per_eng(self,df):
-        engagaments = (self.__sum_kills(df) + self.__sum_deaths(df)) * 0.95 # 5% is taken off here for non engagements deaths (Suicides, traps, etc)
-        kills_trim = self.__sum_kills(df) * 0.95 # Error like last variable
+        engagaments = (self.__sum_kills(df) + self.__sum_deaths(df)) * 0.95 
+        # 5% is taken off here for non engagements deaths (Suicides, traps, etc)
+        kills_trim = self.__sum_kills(df) * 0.95
+         # Error like last variable
         return kills_trim / engagaments
 
     # comparisons 
