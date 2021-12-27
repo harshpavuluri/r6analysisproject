@@ -5,10 +5,12 @@ class Account:
     '''
     Class variables:
     self.account_name: string
-    defender_roles: dataframe
-    attacker_roles: dataframe
     attack_ops: dataframe
     defend_ops: dataframe
+    
+    Added variables:
+    defender_roles: dataframe
+    attacker_roles: dataframe
 
     Accessible Functions:
     __init__: Initiate Class
