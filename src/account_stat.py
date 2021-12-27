@@ -15,8 +15,10 @@ class Account:
     attacker_stats: Takes a dataframe and returns a dataframe of attacker roles
     defender_stats: Takes a dataframe and returns a dataframe of defender roles
     '''
-    def __init__(self, account_name):
+    def __init__(self, account_name, attack_df, defend_df):
         self.account_name = account_name
+        self.attack_ops = attack_df
+        self.defend_ops = defend_df
         pass
 
     #Private Functions
@@ -157,6 +159,7 @@ class Account:
         "head_per_eng","wins_per_eng","experience","playtime"]] = final_df[["kills","deaths","K/D", "wins","losses", "headshots",
                                                                     "head_per_eng","wins_per_eng","experience","playtime"]].apply(pd.to_numeric)
         self.attacker_roles = final_df
+        return final_df
         pass
 
 
@@ -191,4 +194,5 @@ class Account:
         "head_per_eng","wins_per_eng","experience","playtime"]] = final_df[["kills","deaths","K/D", "wins","losses", "headshots",
                                                                     "head_per_eng","wins_per_eng","experience","playtime"]].apply(pd.to_numeric)
         self.defender_roles = final_df
+        return final_df
         pass
