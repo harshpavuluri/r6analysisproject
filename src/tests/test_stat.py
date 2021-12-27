@@ -78,6 +78,30 @@ def test_private_access():
     except AttributeError as exc:
         assert True, f"Raised because method is private, {exc}"
 
+    try:
+        private_obj.__comp_head_per_eng(private_obj.attack_ops)
+        assert False, "'__kd' method is not private"
+    except AttributeError as exc:
+        assert True, f"Raised because method is private, {exc}"
+    
+    try:
+        private_obj.__headshots_per_eng(private_obj.attack_ops)
+        assert False, "'__kd' method is not private"
+    except AttributeError as exc:
+        assert True, f"Raised because method is private, {exc}"
+    
+    try:
+        private_obj.__wins_per_eng(private_obj.attack_ops)
+        assert False, "'__kd' method is not private"
+    except AttributeError as exc:
+        assert True, f"Raised because method is private, {exc}"
+    
+    try:
+        private_obj.__comp_wins_per_eng(private_obj.attack_ops)
+        assert False, "'__kd' method is not private"
+    except AttributeError as exc:
+        assert True, f"Raised because method is private, {exc}"
+
     # assert type(private_obj.defender_roles) == float
     pass
 
