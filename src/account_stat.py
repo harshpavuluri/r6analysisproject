@@ -142,7 +142,7 @@ class Account:
         role_list = ["Hard Breacher","Hard Breach Support","Soft Breachers","Entry Fraggers","Disrupters","Angle Watchers","Area Denial","Intel Gatherers"]
         
         hard_breach = ["Thermite" , "Hibana", "Maverick", "Ace"]
-        hard_breach_supp = ["Thathcer", "Kali", "Twitch", "Maverick", "IQ", "Flores", "Osa"]
+        hard_breach_supp = ["Thatcher", "Kali", "Twitch", "Maverick", "IQ", "Flores", "Osa"]
         soft_breach = ["Buck", "Sledge", "Zofia", "Ash", "Jackal", "Amaru", "Flores"]
         entry_frag = ["Ash", "Zofia", "Jackal", "Buck", "Sledge", "IQ", "Twitch", "Blitz", "Maverick", "Nomad", "Ying", "Nøkk", "Finka", "Flores"] 
         disrupt = ["Lion", "Dokkaebi", "Montagne", "Nomad", "Capitao", "Fuze", "Jackal", "Flores", "Osa"]
