@@ -38,7 +38,7 @@ def test_empty():
     assert hasattr(temp_obj, 'defender_roles') is False
 
 def test_private_access():
-    all_ops_df = get_data('ops_kuri.json')
+    all_ops_df = get_data('kuri_neon_ops.json')
     attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
     private_obj = Account("private",attacker_df, None)
 
@@ -106,7 +106,7 @@ def test_private_access():
     pass
 
 def test_attack():
-    all_ops_df = get_data('ops_kuri.json')
+    all_ops_df = get_data('kuri_neon_ops.json')
     attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
     # defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
     kuri_obj = Account("Kuri_NEON", attacker_df, None)
@@ -130,7 +130,7 @@ def test_attack():
     assert attack is not None
     assert attack_types == schema_types
 def test_defend():
-    all_ops_df = get_data('ops_kuri.json')
+    all_ops_df = get_data('kuri_neon_ops.json')
     defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
     kuri_obj = Account("Kuri_NEON", None, defender_df)
     defend = kuri_obj.defender_stats(defender_df)
