@@ -1,1 +1,0 @@
-MONGO_ACCOUNT = "mongodb+srv://pavuluriharsh:Archbow234%@r6analysisdatabase.ltvmd.mongodb.net/admin?retryWrites=true&w=majority"
