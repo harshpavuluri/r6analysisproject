@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    enviorment: R6_ENV
     steps:
       - uses: actions/checkout@v2
       - name: Install Python 3
