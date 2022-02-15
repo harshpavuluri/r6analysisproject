@@ -22,4 +22,4 @@ jobs:
       - name: Run tests with pytest
         run: |
           cd src
-          pytest -v
+          pytest -v --ignore-glob='test_*.py'
