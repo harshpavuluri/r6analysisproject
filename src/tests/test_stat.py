@@ -1,6 +1,7 @@
 
 import sys
 import os
+from pymongo import MongoClient
 # getting the name of the directory
 # where the this file is present.
 # current = os.path.dirname(os.path.realpath(__file__))
@@ -12,7 +13,7 @@ import os
 # sys.path.append(parent)
 
 MONGO = os.environ['MONGO_ACCOUNT']
-client = MongoClient(constants.MONGO_ACCOUNT)
+client = MongoClient(MONGO)
 db=client.public
 # Issue the serverStatus command and print the results
 collection = db.players
