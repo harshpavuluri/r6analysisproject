@@ -1,13 +1,24 @@
 from account_stat import Account
-import r6stats
 import json
 import pandas as pd
 import requests
+from pymongo import MongoClient
+import constants
 
-def get_data(data):
+client = MongoClient(constants.MONGO_ACCOUNT)
+db=client.public
+collection = db.players
+
+
+def get_data(name):
     # with open('stat_files/' + file) as f:
     #     data = json.load(f)
-    print(data)
+    data = db.players.find_one({'username': name})
+
+    if data is None:
+        print("Player not found")
+        return None
+
     column_names = ["name", "ctu", "role","kills","deaths","kd","wins","losses","wl","headshots","dbnos","melee_kills","experience","playtime"]
 
     df = pd.DataFrame(columns = column_names)
@@ -20,18 +31,23 @@ def get_data(data):
 
 
 def main():
-    headers = {"Authorization": ""}
-    r = requests.get("https://api2.r6stats.com/public-api/stats/Kuri_NEON/pc/operators", headers=headers)
-    data = r.json()
+    # headers = {"Authorization": constants.API_KEY}
+    # r = requests.get("https://api2.r6stats.com/public-api/stats/Kuri_NEON/pc/operators", headers=headers)
+    # data = r.json()
+    name = 'Kuri_NEON'
 
-    all_ops_df = get_data(data)
+    all_ops_df = get_data(name)
+
+    if all_ops_df is None:
+        return
+
     attacker_df = all_ops_df[all_ops_df['role'] == "Attacker"]
     defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
-    kuri_obj = Account("Kuri_NEON", attacker_df, defender_df)
-    print("Stats for " + kuri_obj.account_name)
-    attack = kuri_obj.attacker_stats(attacker_df)
+    player_obj = Account(name, attacker_df, defender_df)
+    print("Stats for " + player_obj.account_name)
+    attack = player_obj.attacker_stats(attacker_df)
     print() 
-    defend = kuri_obj.defender_stats(defender_df)
+    defend = player_obj.defender_stats(defender_df)
 
 
 main()

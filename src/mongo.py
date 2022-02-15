@@ -12,15 +12,15 @@ db=client.public
 # Issue the serverStatus command and print the results
 collection = db.players
 
-with open('stat_files/kuri_neon_ops.json') as file:
-    file_data = json.load(file)
+# with open('stat_files/kuri_neon_ops.json') as file:
+#     file_data = json.load(file)
 
 
-if isinstance(file_data, list):
-    collection.insert_many(file_data)  
-else:
-    collection.insert_one(file_data)
+# if isinstance(file_data, list):
+#     collection.insert_many(file_data)  
+# else:
+#     collection.insert_one(file_data)
 
-pprint(db.players.find_one({'username': 'Kuri_NEON'}))
+pprint(db.players.find_one({'username': 'Avoxen'}))
 
 #Tx3Mn1FfVqNZxMxNsNHuI4xDNcUf4UzRcHDJnIn6VvGHnEMaZmQme63MOi0r2WRa
