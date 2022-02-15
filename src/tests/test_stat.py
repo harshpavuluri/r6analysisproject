@@ -1,4 +1,5 @@
 
+import secrets
 import sys
 import os
 from pymongo import MongoClient
@@ -11,8 +12,8 @@ from pymongo import MongoClient
 # adding the parent directory to 
 # the sys.path.
 # sys.path.append(parent)
-print(os.environ)
-MONGO = os.environ['MONGO_ACCOUNT']
+# print(os.environ)
+MONGO = {{secrets.MONGO_ACCOUNT}}
 client = MongoClient(MONGO)
 db=client.public
 # Issue the serverStatus command and print the results
