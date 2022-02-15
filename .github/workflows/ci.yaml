@@ -9,12 +9,13 @@ on:
 
 jobs:
   build:
+    enviornment: R6_ENV
+    env:
+      MONGO_ACCOUNT: ${{ secrets.MONGO_ACCOUNT }}
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - name: Setup Env
-        env:
-          MONGO_ACCOUNT: ${{ secrets.MONGO_ACCOUNT }}
       - name: Install Python 3
         uses: actions/setup-python@v1
         with:
