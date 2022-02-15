@@ -11,7 +11,7 @@ from pymongo import MongoClient
 # adding the parent directory to 
 # the sys.path.
 # sys.path.append(parent)
-
+print(os.environ)
 MONGO = os.environ['MONGO_ACCOUNT']
 client = MongoClient(MONGO)
 db=client.public
