@@ -13,7 +13,7 @@ from pymongo import MongoClient
 # the sys.path.
 # sys.path.append(parent)
 # print(os.environ)
-MONGO = {{secrets.MONGO_ACCOUNT}}
+MONGO = os.environ['MONGO_ACCOUNT']
 client = MongoClient(MONGO)
 db=client.public
 # Issue the serverStatus command and print the results
