@@ -5,13 +5,13 @@ import os
 from pymongo import MongoClient
 # getting the name of the directory
 # where the this file is present.
-# current = os.path.dirname(os.path.realpath(__file__))
+current = os.path.dirname(os.path.realpath(__file__))
 # Getting the parent directory name
 # where the current directory is present.
-# parent = os.path.dirname(current)
+parent = os.path.dirname(current)
 # adding the parent directory to 
 # the sys.path.
-# sys.path.append(parent)
+sys.path.append(parent)
 # print(os.environ)
 MONGO = os.environ['MONGO_ACCOUNT']
 client = MongoClient(MONGO)
