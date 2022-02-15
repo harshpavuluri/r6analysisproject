@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    enviornment: R6_ENV
+    environment: R6_ENV
     env:
       MONGO_ACCOUNT: ${{ secrets.MONGO_ACCOUNT }}
     steps:
