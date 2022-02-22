@@ -31,10 +31,11 @@ def get_data(name):
 
 
 def main():
-    # headers = {"Authorization": constants.API_KEY}
-    # r = requests.get("https://api2.r6stats.com/public-api/stats/Kuri_NEON/pc/operators", headers=headers)
-    # data = r.json()
     name = 'Kuri_NEON'
+
+    headers = {"Authorization": constants.API_KEY}
+    r = requests.get(f'https://api2.r6stats.com/public-api/stats/{name}/pc/operators', headers=headers)
+    data = r.json()
 
     all_ops_df = get_data(name)
 
@@ -49,5 +50,13 @@ def main():
     print() 
     defend = player_obj.defender_stats(defender_df)
 
+    attack = attack.to_json()
+    defend = defend.to_json()
+
+    collection.update_one({'username': name}, {'$set': {'attacker_stats': attack, 'defender_stats': defend}})
+
+    attacker_ret = db.players.find_one({'username': name})['attacker_stats']
+    attack_reform = pd.read_json(attacker_ret)
+    print(attack_reform.head())
 
 main()
