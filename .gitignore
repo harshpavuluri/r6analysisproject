@@ -1,3 +1,4 @@
 src/constants.py
 src/stat_files/
 src/__pycache__/
+src/.pytest_cache/
