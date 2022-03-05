@@ -144,6 +144,7 @@ def test_attack():
     # print(attack_types)
     assert attack is not None
     assert attack_types == schema_types
+
 def test_defend():
     all_ops_df = get_data('Kuri_NEON')
     defender_df = all_ops_df[all_ops_df['role'] == "Defender"]
