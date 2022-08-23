@@ -52,6 +52,7 @@ def stats(account_name):
 @app.route('/stats/<account_name>/<role>', methods= ['GET'])
 def stats_role(account_name, role):
     if request.method == 'GET':
+        print("hello I'm here")S
         df = None
         if role == "attacker" or role == "defender":
             df = get_data(f'{account_name}')
